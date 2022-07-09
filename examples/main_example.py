@@ -83,16 +83,13 @@ if enable_pagination:
     st.sidebar.text("___")
 
 ### make the first edit here 
-               
-def ch_data(data):
-    data.values.tolist()
-    dict1 = {}
-    for x in data1:
-        dict1[x] = data1[x]
-    
-    return dict1
+data1 = pd.read_csv(os.path.join(root, "data/t1.csv")              
+data1.values.tolist()
+dict1 = {}
+for x in data1:
+    dict1[x] = data1[x]
 
-df = pd.DataFrame(ch_data(pd.read_csv(os.path.join(root, "data/t1.csv")))
+df = pd.DataFrame(dict1)
 ### finish first edit 
 
 #Infer basic colDefs from dataframe types
