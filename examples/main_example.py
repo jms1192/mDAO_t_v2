@@ -165,7 +165,7 @@ with st.spinner("Displaying results..."):
   
         
         
-    st.dataframe(df)
+    st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
         y='USD Amount'
