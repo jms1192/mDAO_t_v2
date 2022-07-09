@@ -155,12 +155,15 @@ with st.spinner("Displaying results..."):
     #edit 2 
     ##chart_data = df.assign(source='total')
     #chart_data = df.loc[:,['Token','USD Amount']].assign(source='selection')
-   
+    
+    df.assign(source='total')
     if not selected_df.empty :
         selected_data = selected_df.assign(source='selection')
-        chart_data = pd.concat(selected_data, df.assign(source='total'))
-     else:
-        chart_data = df.assign(source='total')
+        chart_data = pd.concat(selected_data, df)
+    else:
+        chart_data = df
+  
+        
         
     st.dataframe(df)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
