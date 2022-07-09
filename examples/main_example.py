@@ -153,7 +153,7 @@ selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
 
 with st.spinner("Displaying results..."):
     #edit 2 
-    chart_data = df.loc[:,['USD Amount']].assign(source='total')
+    chart_data = df.loc[:,[ 'Token','USD Amount']].assign(source='total')
 
     if not selected_df.empty :
         selected_data = selected_df.loc[:,['USD Amount']].assign(source='selection')
