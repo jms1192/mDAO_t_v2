@@ -158,10 +158,12 @@ with st.spinner("Displaying results..."):
    
     if not selected_df.empty :
         selected_data = selected_df.assign(source='selection')
-
-    #chart_data = pd.melt(chart_data, id_vars=['source'], var_name="Incoming/Outgoing", value_name="USD Amount")
+        chart_data = pd.concat(selected_data, df.assign(source='total'))
+     else:
+        chart_data = df.assign(source='total')
+        
     st.dataframe(df)
-    chart = alt.Chart(data=df.assign(source='total')).mark_bar().encode(
+    chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
         y='USD Amount',
         color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
