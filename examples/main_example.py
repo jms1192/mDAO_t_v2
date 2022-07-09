@@ -159,8 +159,8 @@ with st.spinner("Displaying results..."):
         selected_data = selected_df.loc[:,['USD Amount', 'Token Symbol']].assign(source='selection')
         chart_data = pd.concat([chart_data, selected_data])
 
-    chart_data = pd.melt(chart_data, id_vars=['source'], var_name="item", value_name="quantity")
-    #st.dataframe(chart_data)
+    chart_data = pd.melt(chart_data, id_vars=['source'], var_name="flow", value_name="value")
+    st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x=alt.X("item:O"),
         y=alt.Y("sum(quantity):Q", stack=False),
