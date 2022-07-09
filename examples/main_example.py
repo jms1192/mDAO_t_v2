@@ -168,8 +168,8 @@ with st.spinner("Displaying results..."):
     st.dataframe(df)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
-        y='USD Amount',
-        color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
+        y='USD Amount'
+     #   color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
     )
 
     st.header("Component Outputs - Example chart")
