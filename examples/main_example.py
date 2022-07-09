@@ -96,9 +96,9 @@ df = pd.DataFrame(dict1)
 gb = GridOptionsBuilder.from_dataframe(df)
 
 #customize gridOptions
-##gb.configure_default_column(groupable=True, value=True, enableRowGroup=True, aggFunc='sum', editable=True)
+gb.configure_default_column(groupable=True, value=True, enableRowGroup=True, aggFunc='sum', editable=True)
 
-##gb.configure_column("date_tz_aware", type=["dateColumnFilter","customDateTimeFormat"], custom_format_string='yyyy-MM-dd HH:mm zzz', pivot=True)
+gb.configure_column("date_tz_aware", type=["dateColumnFilter","customDateTimeFormat"], custom_format_string='yyyy-MM-dd HH:mm zzz', pivot=True)
 
 gb.configure_column("USD Amount", type=["numericColumn","numberColumnFilter","customNumericFormat"], precision=2, aggFunc='sum')
 ##gb.configure_column("banana", type=["numericColumn", "numberColumnFilter", "customNumericFormat"], precision=1, aggFunc='avg')
