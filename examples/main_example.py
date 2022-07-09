@@ -161,12 +161,12 @@ with st.spinner("Displaying results..."):
         chart_data = pd.concat([chart_data, selected_data])
 
     #chart_data = pd.melt(chart_data, id_vars=['source'], var_name="Incoming/Outgoing", value_name="USD Amount")
-    st.dataframe(chart_data)
-    chart = alt.Chart(data=chart_data).mark_bar().encode(
-        x=alt.X("item:O"),
-        y=alt.Y("sum(quantity):Q", stack=False),
-        color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
-    )
+    st.dataframe(df)
+    #chart = alt.Chart(data=chart_data).mark_bar().encode(
+    #    x=alt.X("item:O"),
+    #    y=alt.Y("sum(quantity):Q", stack=False),
+    #    color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
+    #)
 
     st.header("Component Outputs - Example chart")
     st.markdown("""
