@@ -152,8 +152,8 @@ selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
 
 
 with st.spinner("Displaying results..."):
-    #displays the chart
-    chart_data = df.loc[:,['apple','banana','chocolate']].assign(source='total')
+    #edit 2 
+    chart_data = df.loc[:,['USD Amount']].assign(source='total')
 
     if not selected_df.empty :
         selected_data = selected_df.loc[:,['apple','banana','chocolate']].assign(source='selection')
