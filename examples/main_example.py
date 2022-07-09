@@ -163,7 +163,7 @@ with st.spinner("Displaying results..."):
     #chart_data = pd.melt(chart_data, id_vars=['source'], var_name="Incoming/Outgoing", value_name="USD Amount")
     st.dataframe(df)
     chart = alt.Chart(data=df).mark_bar().encode(
-        x=alt.X("item:O"),
+        x=alt.X("Token:O"),
         y=alt.Y("sum(USD Amount):Q", stack=False),
         color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
     )
