@@ -161,16 +161,16 @@ with st.spinner("Displaying results..."):
     if not selected_df.empty:
         
         ##chart_data = pd.concat([selected_df, df])
-        chart_data = selected_df
+        chart_data = [x['USD Amount'] for x in selected_df]
     else:
         chart_data = df
   
-    chart_data.groupby(['Token']).mean()    
+    ##chart_data.groupby(['Token']).mean()    
         
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
-        y='USD Amount'
+        y=('USD Amount')
      #   color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
     )
 
