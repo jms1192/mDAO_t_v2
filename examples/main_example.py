@@ -165,12 +165,12 @@ with st.spinner("Displaying results..."):
     else:
         chart_data = df
   
-        
+    chart_data.groupby(['Token']).mean()    
         
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
-        y=alt.Y("sum(USD Amount):Q", stack=False)
+        y='USD Amount'
      #   color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
     )
 
