@@ -105,22 +105,7 @@ gb = GridOptionsBuilder.from_dataframe(df)
 ##gb.configure_column("chocolate", type=["numericColumn", "numberColumnFilter", "customCurrencyFormat"], custom_currency_symbol="R$", aggFunc='max')
 
 #configures last row to use custom styles based on cell's value, injecting JsCode on components front end
-cellsytle_jscode = JsCode("""
-function(params) {
-    if (params.value == 'A') {
-        return {
-            'color': 'white',
-            'backgroundColor': 'darkred'
-        }
-    } else {
-        return {
-            'color': 'black',
-            'backgroundColor': 'white'
-        }
-    }
-};
-""")
-gb.configure_column("group", cellStyle=cellsytle_jscode)
+
 
 if enable_sidebar:
     gb.configure_side_bar()
