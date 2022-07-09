@@ -155,7 +155,7 @@ with st.spinner("Displaying results..."):
     #edit 2 
     ##chart_data = df.assign(source='total')
     #chart_data = df.loc[:,['Token','USD Amount']].assign(source='selection')
-    chart_data = df.loc[['Token','USD Amount']].assign(source='selection')
+    chart_data = df.loc[['Token','USD Amount']]
     if not selected_df.empty :
         selected_data = selected_df.loc[:,['USD Amount']].assign(source='selection')
         chart_data = pd.concat([chart_data, selected_data])
