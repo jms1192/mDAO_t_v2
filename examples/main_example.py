@@ -159,7 +159,7 @@ with st.spinner("Displaying results..."):
         selected_data = selected_df.loc[:,['USD Amount']].assign(source='selection')
         chart_data = pd.concat([chart_data, selected_data])
 
-    chart_data = pd.melt(chart_data, id_vars=['source'], var_name="flow", value_name="value")
+    chart_data = pd.melt(chart_data, id_vars=['source'], var_name="flow", value_name="value", name3= "lol")
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x=alt.X("item:O"),
@@ -173,6 +173,7 @@ with st.spinner("Displaying results..."):
     Experiment selecting rows, group and filtering and check how the chart updates to match.
     """)
 
+    ## final
     st.altair_chart(chart, use_container_width=True)
 
     st.subheader("Returned grid data:") 
