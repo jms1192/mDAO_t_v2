@@ -159,7 +159,7 @@ with st.spinner("Displaying results..."):
     df.assign(source='total')
     if not selected_df.empty :
         selected_data = selected_df.assign(source='selection')
-        chart_data = pd.concat(selected_data, df)
+        chart_data = pd.concat([selected_data, df])
     else:
         chart_data = df
   
