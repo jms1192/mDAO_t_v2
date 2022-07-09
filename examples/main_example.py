@@ -148,7 +148,7 @@ grid_response = AgGrid(
 
 df = grid_response['data']
 selected = grid_response['selected_rows']
-selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
+selected_df = pd.DataFrame(selected).apply(lambda x: np.square(x) if x.name in ['x', 'y'] else x)
 
 
 with st.spinner("Displaying results..."):
