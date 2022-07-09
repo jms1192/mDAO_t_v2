@@ -154,13 +154,13 @@ selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
 with st.spinner("Displaying results..."):
     #edit 2 
     ##chart_data = df.assign(source='total')
-    chart_data = df.loc[:,['Token','USD Amount']].assign(source='selection')
-    #chart_data = df.loc[['Token','USD Amount']]
+    #chart_data = df.loc[:,['Token','USD Amount']].assign(source='selection')
+    chart_data = df.loc[['Token','USD Amount']]
     if not selected_df.empty :
         selected_data = selected_df.loc[:,['USD Amount']].assign(source='selection')
         chart_data = pd.concat([chart_data, selected_data])
 
-    chart_data = pd.melt(chart_data, id_vars=['source'], var_name="Incoming/Outgoing", value_name="USD Amount")
+    #chart_data = pd.melt(chart_data, id_vars=['source'], var_name="Incoming/Outgoing", value_name="USD Amount")
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x=alt.X("item:O"),
