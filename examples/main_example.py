@@ -164,7 +164,7 @@ with st.spinner("Displaying results..."):
     st.dataframe(df)
     chart = alt.Chart(data=df).mark_bar().encode(
         x=alt.X("item:O"),
-        y=alt.Y("sum(quantity):Q", stack=False),
+        y=alt.Y("sum(USD Amount):Q", stack=False),
         color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection'])),
     )
 
