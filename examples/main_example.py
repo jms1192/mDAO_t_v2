@@ -170,7 +170,7 @@ with st.spinner("Displaying results..."):
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
-        y=('USD Amount')
+        y='USD Amount'
      #   color=alt.Color('source:N', scale=alt.Scale(domain=['total','selection']))
     )
 
