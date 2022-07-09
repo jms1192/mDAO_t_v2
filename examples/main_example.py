@@ -82,7 +82,18 @@ if enable_pagination:
         paginationPageSize = st.sidebar.number_input("Page size", value=5, min_value=0, max_value=sample_size)
     st.sidebar.text("___")
 
-df = fetch_data(sample_size)
+### make the first edit here 
+               
+def ch_data(data):
+    data.values.tolist()
+    dict1 = {}
+    for x in data1:
+        dict1[x] = data1[x]
+    
+    return dict1
+
+df = pd.DataFrame(ch_data(pd.read_csv(os.path.join(root, "data/t1.csv")))
+### finish first edit 
 
 #Infer basic colDefs from dataframe types
 gb = GridOptionsBuilder.from_dataframe(df)
