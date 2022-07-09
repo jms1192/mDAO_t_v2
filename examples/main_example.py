@@ -148,7 +148,7 @@ grid_response = AgGrid(
 
 df = grid_response['data']
 selected = grid_response['selected_rows']
-selected_df = pd.DataFrame(selected).apply(lambda x: np.square(x) if x.name in ['x', 'y'] else x)
+selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
 
 
 with st.spinner("Displaying results..."):
@@ -157,9 +157,10 @@ with st.spinner("Displaying results..."):
     #chart_data = df.loc[:,['Token','USD Amount']].assign(lambda x: np.square(x) if x in ['x', 'y'] else x)
     
     df.assign(source='total')
+    #selected.assign(source='total')
     if not selected_df.empty :
-        #selected.assign(source='selection')
-        chart_data = pd.concat([selected_df, df])
+        selected.assign(source='selection')
+        chart_data = pd.concat([df, selected_df])
     else:
         chart_data = df
   
