@@ -148,7 +148,7 @@ grid_response = AgGrid(
 
 df = grid_response['data']
 selected = grid_response['selected_rows']
-selected_df = pd.DataFrame(selected)
+selected_df = pd.DataFrame(selected).apply(pd.to_numeric, errors='coerce')
 
 
 with st.spinner("Displaying results..."):
@@ -158,8 +158,8 @@ with st.spinner("Displaying results..."):
     
     df.assign(source='total')
     if not selected_df.empty :
-        selected.assign(source='selection')
-        chart_data = pd.concat([selected, df])
+        #selected.assign(source='selection')
+        chart_data = pd.concat([selected_df, df])
     else:
         chart_data = df
   
