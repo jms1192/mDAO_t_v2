@@ -161,7 +161,7 @@ with st.spinner("Displaying results..."):
     if not selected_df.empty:
         
         ##chart_data = pd.concat([selected_df, df])
-        chart_data = selected_df.loc['Token', 'USD Amount']
+        chart_data = selected ##_df.loc['Token', 'USD Amount']
     else:
         chart_data = df
   
