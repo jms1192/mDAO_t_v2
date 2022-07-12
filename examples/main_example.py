@@ -167,7 +167,7 @@ with st.spinner("Displaying results..."):
   
     ##chart_data.groupby(['Token']).mean()    
     ## income/outcome data try 1 
-    if chart_data[0]['USD Amount'].isnumeric():
+    if chart_data[0]['USD Amount'].isdecimal():
         st.subheader(chart_data[0]['USD Amount'])
     else:
         st.subheader(0) 
