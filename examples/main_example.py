@@ -166,7 +166,7 @@ with st.spinner("Displaying results..."):
         chart_data = df
   
     ##chart_data.groupby(['Token']).mean()    
-        
+    st.subheader(chart_data)     
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
