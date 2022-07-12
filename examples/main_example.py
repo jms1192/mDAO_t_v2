@@ -176,8 +176,7 @@ with st.spinner("Displaying results..."):
     st.dataframe(chart_data)
     
     chart = pd.DataFrame(
-            #{lol:[1,5]},
-            [1,8],
+            [sum(float([x['USD Amount']) for x in chart_data if x['Incoming/Outgoing'] = 'Incoming' ]),8],
             index=['cool', 'fun']
      )
     st.bar_chart(chart)
