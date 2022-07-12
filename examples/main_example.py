@@ -179,7 +179,7 @@ with st.spinner("Displaying results..."):
     test2 = [float(x['USD Amount']) for x in chart_data 
                 if x['Incoming/Outgoing'] == 'Outgoing' 
                 and x['USD Amount'].isdecimal()]
-    st.dataframe(test2)
+    st.subheader(test2)
     chart = pd.DataFrame(
             [test1,8],
             index=['cool', 'fun']
