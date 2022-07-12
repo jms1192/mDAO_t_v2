@@ -166,7 +166,13 @@ with st.spinner("Displaying results..."):
         chart_data = df
   
     ##chart_data.groupby(['Token']).mean()    
-    st.subheader(chart_data[0]['Incoming/Outgoing'])     
+    ## income/outcome data try 1 
+    if chart_data[0]['Incoming/Outgoing'].isnumeric():
+        st.subheader(chart_data[0]['Incoming/Outgoing'])
+    else:
+        st.subheader(0)
+    
+    
     st.subheader(chart_data[0]['USD Amount'])
     st.dataframe(chart_data)
     chart = alt.Chart(data=chart_data).mark_bar().encode(
