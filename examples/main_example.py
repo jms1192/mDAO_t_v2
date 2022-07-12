@@ -174,7 +174,8 @@ with st.spinner("Displaying results..."):
         
     st.subheader(chart_data[0]['Incoming/Outgoing'])
     st.dataframe(chart_data)
-    test1 = sum(float([x['USD Amount']) for x in chart_data if (x['Incoming/Outgoing'] = 'Incoming' and x['USD Amount'].isdecimal())])
+    #test1 = sum(float([x['USD Amount']) for x in chart_data if (x['Incoming/Outgoing'] = 'Incoming' and x['USD Amount'].isdecimal())])
+    test1 = 1 
     chart = pd.DataFrame(
             [test1,8],
             index=['cool', 'fun']
