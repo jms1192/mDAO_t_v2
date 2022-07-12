@@ -176,9 +176,9 @@ with st.spinner("Displaying results..."):
     st.dataframe(chart_data)
     #test1 = sum(float([x['USD Amount']) for x in chart_data if (x['Incoming/Outgoing'] = 'Incoming' and x['USD Amount'].isdecimal())])
     test1 = 1 
-    test2 = sum([float(x['USD Amount']) for x in chart_data 
+    test2 = [float(x['USD Amount']) for x in chart_data 
                 if x['Incoming/Outgoing'] == 'Outgoing' 
-                and x['USD Amount'].isdecimal()])
+                and x['USD Amount'].isdecimal()]
     st.dataframe(test2)
     chart = pd.DataFrame(
             [test1,8],
