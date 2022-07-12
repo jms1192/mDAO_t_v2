@@ -173,12 +173,15 @@ with st.spinner("Displaying results..."):
         st.subheader(0) 
         
     st.subheader(chart_data[0]['Incoming/Outgoing'])
-    st.dataframe(chart_data)
+    
     chart = pd.DataFrame(
             {lol:[1,5]},
             index=['cool', 'fun']
      )
     st.bar_chart(chart)
+    
+    st.dataframe(chart_data)
+    
     
     chart = alt.Chart(data=chart_data).mark_bar().encode(
         x='Token',
