@@ -183,12 +183,12 @@ with st.spinner("Displaying results..."):
     st.dataframe(chart_data)
     #test1 = sum(float([x['USD Amount']) for x in chart_data if (x['Incoming/Outgoing'] = 'Incoming' and x['USD Amount'].isdecimal())])
     test1 = 1 
-    test2 = [float(x['USD Amount']) for x in chart_data 
+    test2 = sum([float(x['USD Amount']) for x in chart_data 
                 if x['Incoming/Outgoing'] == 'Outgoing' 
-                and isfloat(x['USD Amount'])]
+                and isfloat(x['USD Amount'])])
     st.subheader(test2)
     chart = pd.DataFrame(
-            [test1,8],
+            [test2,8],
             index=['cool', 'fun']
      )
     st.bar_chart(chart)
