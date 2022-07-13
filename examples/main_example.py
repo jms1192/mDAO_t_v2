@@ -166,7 +166,7 @@ with st.spinner("Displaying results..."):
     else:
         chart_data = df
     
-    st.subheader(chart_data)
+    #st.subheader(chart_data)
     
     ## income/outcome start 
     if chart_data[0]['USD Amount'].isdecimal():
