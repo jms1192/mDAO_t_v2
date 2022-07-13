@@ -34,6 +34,13 @@ def fetch_data(samples):
     }
     return pd.DataFrame(dummy_data)
 
+def isfloat(num):
+    try:
+        float(num)
+        return True
+    except ValueError:
+        return False
+
 #Example controlers
 st.sidebar.subheader("St-AgGrid example options")
 
