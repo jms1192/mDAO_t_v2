@@ -186,7 +186,7 @@ with st.spinner("Displaying results..."):
                 if x['Incoming/Outgoing'] == 'Outgoing' 
                 and isfloat(x['USD Amount'])])
     incoming_sum = sum([float(x['USD Amount']) for x in chart_data 
-                if x['Incoming/Outgoing'] == 'Outgoing' 
+                if x['Incoming/Outgoing'] == 'Incoming' 
                 and isfloat(x['USD Amount'])])
     
     chart = pd.DataFrame(
